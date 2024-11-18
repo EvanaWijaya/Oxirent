@@ -36,7 +36,7 @@ fun DetailPanduan(
             TopAppBar(
                 title = {
                     Text(
-                        text = tube.name, // Menampilkan nama tabung di TopBar
+                        text = tube.name,
                         fontWeight = FontWeight.Bold,
                         color = Color.White
                     )

@@ -124,7 +124,6 @@ fun MainScreen() {
                         onBackClick = { navController.popBackStack() }
                     )
                 } else {
-                    // Tampilkan pesan error atau kembalikan ke halaman sebelumnya
                     Text("Data tidak ditemukan")
                 }
 
@@ -168,11 +167,11 @@ fun TopBar(
 
 @Composable
 fun BottomNavigationBar(navController: NavHostController) {
-    val currentRoute by navController.currentBackStackEntryAsState() // Mengamati rute saat ini
+    val currentRoute by navController.currentBackStackEntryAsState()
     val currentDestination = currentRoute?.destination?.route
 
     NavigationBar(
-        containerColor = Color.White // Warna latar belakang BottomNavigation
+        containerColor = Color.White
     ) {
         val items = listOf(
             BottomNavItem("Beranda", "beranda", R.drawable.home),
@@ -201,11 +200,11 @@ fun BottomNavigationBar(navController: NavHostController) {
                     }
                 },
                 colors = NavigationBarItemDefaults.colors(
-                    selectedIconColor = Color(0xFF00BCD4), // Warna ikon yang aktif
-                    selectedTextColor = Color(0xFF00BCD4), // Warna teks yang aktif
-                    unselectedIconColor = Color.Gray,      // Warna ikon yang tidak aktif
-                    unselectedTextColor = Color.Gray,      // Warna teks yang tidak aktif
-                    indicatorColor = Color.Transparent     // Menghilangkan warna indikator
+                    selectedIconColor = Color(0xFF00BCD4),
+                    selectedTextColor = Color(0xFF00BCD4),
+                    unselectedIconColor = Color.Gray,
+                    unselectedTextColor = Color.Gray,
+                    indicatorColor = Color.Transparent
                 )
             )
         }

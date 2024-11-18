@@ -87,7 +87,6 @@ fun TubeScreen(onCylinderClick: (Cylinder) -> Unit) {
 
         Spacer(modifier = Modifier.height(16.dp))
 
-        // Grid List of Cylinders
         LazyVerticalGrid(
             columns = GridCells.Fixed(2),
             modifier = Modifier.fillMaxSize(),
@@ -113,7 +112,7 @@ fun OxygenCylinderItem(cylinder: Cylinder, onClick: () -> Unit) {
             .padding(8.dp)
             .fillMaxWidth()
             .height(200.dp)
-            .clickable { onClick() }, // Tambahkan aksi klik untuk item
+            .clickable { onClick() },
         elevation = CardDefaults.cardElevation(4.dp)
     ) {
         Column(

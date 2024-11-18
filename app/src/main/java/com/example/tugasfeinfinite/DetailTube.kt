@@ -31,7 +31,7 @@ fun DetailScreen(tube: Cylinder, onBackClick: () -> Unit) {
                 modifier = Modifier.padding(bottom = 16.dp)
             )
             Image(
-                painter = painterResource(id = R.drawable.tabung1), // Sesuaikan dengan resource Anda
+                painter = painterResource(id = R.drawable.tabung1),
                 contentDescription = "Tabung Oksigen",
                 modifier = Modifier
                     .fillMaxWidth()
@@ -51,15 +51,14 @@ fun DetailScreen(tube: Cylinder, onBackClick: () -> Unit) {
                 modifier = Modifier.padding(bottom = 8.dp)
             )
 
-            // Row pertama untuk Ukuran
             Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp), // Jarak tetap antar elemen
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 DetailItem(
                     title = "Jenis",
                     value = "D-cylinder\nIndustri Kesehatan",
-                    modifier = Modifier.weight(1f) // Membagi ruang sama besar
+                    modifier = Modifier.weight(1f)
                 )
                 DetailItem(
                     title = "Ukuran",
@@ -68,12 +67,10 @@ fun DetailScreen(tube: Cylinder, onBackClick: () -> Unit) {
                 )
             }
 
-            // Spacer untuk memberi jarak antara kotak "Ukuran" dan "Berat"
             Spacer(modifier = Modifier.height(16.dp))
 
-            // Row kedua untuk Kapasitas dan Berat
             Row(
-                horizontalArrangement = Arrangement.spacedBy(8.dp), // Jarak tetap antar elemen
+                horizontalArrangement = Arrangement.spacedBy(8.dp),
                 modifier = Modifier.fillMaxWidth()
             ) {
                 DetailItem(

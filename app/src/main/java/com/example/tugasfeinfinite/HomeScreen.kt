@@ -27,7 +27,6 @@ import androidx.compose.ui.text.font.FontFamily
 import androidx.compose.ui.text.font.FontWeight
 import androidx.navigation.NavHostController
 import android.net.Uri
-import androidx.compose.ui.graphics.Brush
 
 val Poppins = FontFamily(
     Font(R.font.poppins_regular, FontWeight.Normal),
@@ -49,7 +48,7 @@ fun HomeScreen(navController: NavHostController) {
         Spacer(modifier = Modifier.height(16.dp))
         PilihanTabungSection(navController)
         Spacer(modifier = Modifier.height(16.dp))
-        UlasanPeminjam(navController)  // Pastikan parameter yang benar digunakan di sini
+        UlasanPeminjam(navController)
     }
 }
 
@@ -144,8 +143,8 @@ fun PilihanTabungSection(navController: NavHostController) {
 
         Spacer(modifier = Modifier.height(8.dp))
         LazyRow(
-            horizontalArrangement = Arrangement.spacedBy(16.dp), // Spasi antar item
-            contentPadding = PaddingValues(horizontal = 8.dp) // Padding kiri dan kanan
+            horizontalArrangement = Arrangement.spacedBy(16.dp),
+            contentPadding = PaddingValues(horizontal = 8.dp)
         ) {
             items(getTabungList()) { tabung ->
                 Column(
@@ -153,7 +152,6 @@ fun PilihanTabungSection(navController: NavHostController) {
                     modifier = Modifier
                         .width(120.dp)
                         .clickable {
-                            // Navigasi ke halaman detail dengan parameter nama tabung
                             navController.navigate("detail/${tabung.name}")
                         }
                 ) {
@@ -206,7 +204,6 @@ fun getTabungList(): List<Tabung> {
 }
 
 
-// Data class untuk menyimpan informasi ulasan
 data class Review(
     val userName: String,
     val userRole: String,
@@ -214,7 +211,6 @@ data class Review(
     val rating: Int
 )
 
-// Daftar ulasan untuk 10 peminjam
 fun getReviews(): List<Review> {
     return listOf(
         Review("Evana Eka Wijaya", "Mahasiswa", "Tanggapan cepat dan sangat membantu! Tabung oksigen dalam kondisi baik dan siap pakai. Proses peminjaman mudah dan pelayanan sangat ramah. Terima kasih, sangat direkomendasikan!", 4),
@@ -266,23 +262,23 @@ fun ReviewItem(userName: String, userRole: String, reviewText: String, onClick: 
     Card(
         modifier = Modifier
             .fillMaxWidth()
-            .padding(vertical = 8.dp) // Jarak antar card
+            .padding(vertical = 8.dp)
             .clickable { onClick() },
-        shape = RoundedCornerShape(16.dp), // Sudut bulat modern
-        elevation = CardDefaults.cardElevation(8.dp), // Efek bayangan lembut
+        shape = RoundedCornerShape(16.dp),
+        elevation = CardDefaults.cardElevation(8.dp),
         colors = CardDefaults.cardColors(
-            containerColor = Color.White // Latar belakang putih bersih
+            containerColor = Color.White
         )
     ) {
         Column(
-            modifier = Modifier.padding(16.dp) // Padding dalam card
+            modifier = Modifier.padding(16.dp)
         ) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(
                     modifier = Modifier
                         .size(50.dp)
                         .clip(CircleShape)
-                        .background(Color.Gray) // Profil gambar placeholder
+                        .background(Color.Gray)
                 ) {
                     Icon(
                         imageVector = ImageVector.vectorResource(id = R.drawable.orang),
@@ -291,7 +287,7 @@ fun ReviewItem(userName: String, userRole: String, reviewText: String, onClick: 
                         tint = Color.White
                     )
                 }
-                Spacer(modifier = Modifier.width(8.dp)) // Jarak antara foto profil dan teks
+                Spacer(modifier = Modifier.width(8.dp))
                 Column {
                     Text(
                         text = userName,
@@ -308,7 +304,7 @@ fun ReviewItem(userName: String, userRole: String, reviewText: String, onClick: 
                     )
                 }
             }
-            Spacer(modifier = Modifier.height(12.dp)) // Jarak antara header dan isi
+            Spacer(modifier = Modifier.height(12.dp))
             Text(
                 text = reviewText,
                 fontSize = 14.sp,

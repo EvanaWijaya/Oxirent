@@ -27,7 +27,6 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.compose.ui.tooling.preview.Preview
 
 @Composable
 fun ReviewCard(
@@ -66,11 +65,9 @@ fun ReviewCard(
             modifier = Modifier
                 .padding(innerPadding)
                 .fillMaxSize()
-                .background(Color(0xFFFFFFFF)) // Background warna putih
+                .background(Color(0xFFFFFFFF))
                 .padding(top = 16.dp)
         ) {
-            // Konten layar seperti sebelumnya
-            // Profil dan komentar
             Row(
                 modifier = Modifier
                     .fillMaxWidth()
@@ -99,7 +96,6 @@ fun ReviewCard(
                 }
             }
 
-            // Rating dan waktu
             Row(
                 modifier = Modifier
                     .padding(start = 16.dp)
@@ -122,7 +118,6 @@ fun ReviewCard(
                 )
             }
 
-            // Gambar dan komentar
             Spacer(modifier = Modifier.height(8.dp))
             Image(
                 painter = painterResource(id = R.drawable.tabung1),

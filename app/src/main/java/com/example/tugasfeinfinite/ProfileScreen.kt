@@ -1,5 +1,3 @@
-@file:OptIn(ExperimentalMaterial3Api::class)
-
 package com.example.tugasfeinfinite
 
 import androidx.compose.foundation.Image
